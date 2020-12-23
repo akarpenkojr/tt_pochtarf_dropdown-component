@@ -2,7 +2,7 @@
  Created on 23.12.2020
  */
 
-const menuItems = [
+export const menuItems = [
 	{
 		id: '99995cab-36a5-431c-82e7-1762b28d17e3',
 		index: 0,
@@ -28,7 +28,3 @@ const menuItems = [
 		text: 'Двустороннее соглашение'
 	}
 ];
-
-export {
-	menuItems
-}
