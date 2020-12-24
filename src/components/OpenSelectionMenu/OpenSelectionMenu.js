@@ -16,7 +16,6 @@ class OpenSelectionMenu extends Component {
 	}
 
    render() {
-		console.log('___---_-_!!!_-_---___', this.props);
 			const rotate = this.props.isMenuOpen ? {
 				transform: 'rotate(0deg)'
 			} : {
