@@ -35,13 +35,19 @@ class Dropdown extends Component {
 		 const openComponent = this.state.isMenuOpen ? {
 			 maxHeight: '205px',
 			 height: '100%',
-			 borderColor: 'rgba(0, 85, 166, 1)'
+
 		 } : {
 			 maxHeight: '40px',
 			 height: '100%'
 		 };
+
+		 let dropDownComponent = styles.dropDownComponent;
+		 if (this.state.isMenuOpen || this.state.selectedOptions.length) {
+			 dropDownComponent = styles.dropDownComponent + ' ' + styles.dropDownComponentActive;
+		 }
+
       return (
-         <div className={styles.dropDownComponent} style={openComponent}>
+         <div className={dropDownComponent} style={openComponent}>
 					 <div className={styles.dropDownComponent__headerWrapper}>
 						 { !this.state.selectedOptions.length ? (
 								 <div className={styles.dropDownComponent__titleWrapper}>
