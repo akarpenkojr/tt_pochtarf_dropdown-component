@@ -10,6 +10,7 @@ import DeselectAllOptions from "../DeselectAllOptions";
 import DropdownTitle from "../DropdownTitle";
 import OpenSelectionMenu from "../OpenSelectionMenu";
 import OptionItems from "../OptionItems";
+import SelectedOptionItems from "../SelectedOptionItems";
 
 // import styles
 import styles from './Dropdown.module.scss'
@@ -65,7 +66,10 @@ class Dropdown extends Component {
 									 <DropdownTitle />
 								 </div>
 						 ) : (
-								 <div>
+								 <div className={styles.dropDownComponent__content}>
+									 <div className={styles.dropDownComponent__selectedOptionItemsWrapper}>
+										 <SelectedOptionItems />
+									 </div>
 									 <div className={styles.dropDownComponent__deselectIconWrapper}>
 										 <DeselectAllOptions />
 									 </div>
