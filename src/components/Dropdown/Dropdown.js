@@ -45,7 +45,7 @@ class Dropdown extends Component {
 							 </div>
 					 )
 					 }
-					 <OpenSelectionMenu onClick={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
+					 <OpenSelectionMenu switchMenu={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
          </div>
       )
    }

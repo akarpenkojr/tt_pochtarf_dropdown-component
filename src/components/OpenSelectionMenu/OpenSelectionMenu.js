@@ -22,7 +22,7 @@ class OpenSelectionMenu extends Component {
 				transform: 'rotate(180deg)'
 			};
       return (
-         <div className={styles.openMenuIcon} style={rotate} onClick={this.props.onClick}>
+         <div className={styles.openMenuIcon} style={rotate} onClick={this.props.switchMenu}>
 					 <img src={OpenMenuIcon} alt="open close menu"/>
          </div>
       )
