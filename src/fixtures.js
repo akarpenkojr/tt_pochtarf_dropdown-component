@@ -26,5 +26,17 @@ export const menuItems = [
 		index: 3,
 		title: 'UZ',
 		text: 'Двустороннее соглашение'
+	},
+	{
+		id: "3c7828cf-c9c5-40bb-8444-468d04e101f8",
+		index: 4,
+		title: 'UK',
+		text: 'Утвержденное соглашение'
+	},
+	{
+		id: "3c7828cf-c9c5-40bb-8444-468737e4aff8",
+		index: 5,
+		title: 'UO',
+		text: 'Соглашение на утверждение'
 	}
 ];

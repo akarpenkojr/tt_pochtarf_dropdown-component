@@ -34,26 +34,29 @@ class Dropdown extends Component {
    render() {
 		 const openComponent = this.state.isMenuOpen ? {
 			 maxHeight: '205px',
-			 height: '100%'
+			 height: '100%',
+			 borderColor: 'rgba(0, 85, 166, 1)'
 		 } : {
 			 maxHeight: '40px',
 			 height: '100%'
 		 };
       return (
          <div className={styles.dropDownComponent} style={openComponent}>
-					 { !this.state.selectedOptions.length ? (
-							 <div className={styles.dropDownComponent__titleWrapper}>
-								 <DropdownTitle />
-							 </div>
-					 ) : (
-							 <div>
-								 <div className={styles.dropDownComponent__deselectIconWrapper}>
-									 <DeselectAllOptions />
+					 <div className={styles.dropDownComponent__headerWrapper}>
+						 { !this.state.selectedOptions.length ? (
+								 <div className={styles.dropDownComponent__titleWrapper}>
+									 <DropdownTitle />
 								 </div>
-							 </div>
-					 )
-					 }
-					 <OpenSelectionMenu switchMenu={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
+						 ) : (
+								 <div>
+									 <div className={styles.dropDownComponent__deselectIconWrapper}>
+										 <DeselectAllOptions />
+									 </div>
+								 </div>
+						 )
+						 }
+						 <OpenSelectionMenu switchMenu={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
+					 </div>
 					 <OptionItems items={this.props.menuItems}/>
          </div>
       )
