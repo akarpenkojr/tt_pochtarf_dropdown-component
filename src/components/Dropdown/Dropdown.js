@@ -31,8 +31,15 @@ class Dropdown extends Component {
 	}
 
    render() {
+		 const openComponent = this.state.isMenuOpen ? {
+			 height: '203px',
+			 maxHeight: '203px'
+		 } : {
+			 height: '40px',
+			 maxHeight: '40px'
+		 };
       return (
-         <div className={styles.dropDownComponent}>
+         <div className={styles.dropDownComponent} style={openComponent}>
 					 { !this.state.selectedOptions.length ? (
 							 <div className={styles.dropDownComponent__titleWrapper}>
 								 <DropdownTitle />
