@@ -16,11 +16,12 @@ class OptionItems extends Component {
 	}
 
    render() {
+		console.log('___---_-_!!!_-_---___', this.props);
       return (
          <div className={styles.optionsAreaWrapper} >
 					 {this.state.items.map(item => {
 					 		return (
-					 				<div key={item.id}>
+					 				<div key={item.id} onClick={() => this.props.selectOption(this.props.items, item.id)}>
 										{ item.title }
 									</div>
 							)

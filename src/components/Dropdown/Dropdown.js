@@ -23,7 +23,18 @@ class Dropdown extends Component {
 		};
 
 		this.switchMenu = this.switchMenu.bind(this);
+		this.selectOption = this.selectOption.bind(this);
 	}
+
+	selectOption = (object, id) => {
+		let selected = [...this.state.selectedOptions];
+		selected.push(object.filter(item => {
+			return item.id === id;
+		}));
+		this.setState({
+			selectedOptions: selected
+		});
+	};
 
 	switchMenu() {
 		this.setState(state => ({
@@ -63,7 +74,7 @@ class Dropdown extends Component {
 						 }
 						 <OpenSelectionMenu switchMenu={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
 					 </div>
-					 <OptionItems items={this.props.menuItems}/>
+					 <OptionItems selectOption={this.selectOption} items={this.props.menuItems}/>
          </div>
       )
    }
