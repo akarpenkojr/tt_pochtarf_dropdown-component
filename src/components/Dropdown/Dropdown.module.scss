@@ -1,0 +1,14 @@
+.dropDownComponent {
+	width: 285px;
+	height: 40px;
+	border-radius: 3px;
+	border: 1px solid rgba(204, 206, 217, 1);
+	padding-left: 11px;
+	position: relative;
+	&__title {
+		color: rgba(172, 172, 172, 1);
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
