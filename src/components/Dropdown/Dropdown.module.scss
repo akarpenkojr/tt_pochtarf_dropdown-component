@@ -9,6 +9,8 @@
 	flex-direction: row;
 	justify-content: space-between;
 	line-height: 40px;
+	transition: max-height .5s;
+	-webkit-transition: max-height .5s;
 	&__titleWrapper {
 		align-self: center;
 		display: flex;

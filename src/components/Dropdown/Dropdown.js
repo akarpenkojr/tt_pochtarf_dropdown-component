@@ -9,6 +9,7 @@ import React, {Component} from 'react'
 import DeselectAllOptions from "../DeselectAllOptions";
 import DropdownTitle from "../DropdownTitle";
 import OpenSelectionMenu from "../OpenSelectionMenu";
+import OptionItems from "../OptionItems";
 
 // import styles
 import styles from './Dropdown.module.scss'
@@ -32,11 +33,11 @@ class Dropdown extends Component {
 
    render() {
 		 const openComponent = this.state.isMenuOpen ? {
-			 height: '203px',
-			 maxHeight: '203px'
+			 maxHeight: '205px',
+			 height: '100%'
 		 } : {
-			 height: '40px',
-			 maxHeight: '40px'
+			 maxHeight: '40px',
+			 height: '100%'
 		 };
       return (
          <div className={styles.dropDownComponent} style={openComponent}>
@@ -53,6 +54,7 @@ class Dropdown extends Component {
 					 )
 					 }
 					 <OpenSelectionMenu switchMenu={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
+					 <OptionItems items={this.props.menuItems}/>
          </div>
       )
    }
