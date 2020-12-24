@@ -21,10 +21,10 @@ class Dropdown extends Component {
 			isMenuOpen: false
 		};
 
-		this.handleClick = this.handleClick.bind(this);
+		this.switchMenu = this.switchMenu.bind(this);
 	}
 
-	handleClick() {
+	switchMenu() {
 		this.setState(state => ({
 			isMenuOpen: !state.isMenuOpen
 		}));
@@ -45,7 +45,7 @@ class Dropdown extends Component {
 							 </div>
 					 )
 					 }
-					 <OpenSelectionMenu onClick={this.handleClick} isMenuOpen={this.state.isMenuOpen}/>
+					 <OpenSelectionMenu onClick={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
          </div>
       )
    }
