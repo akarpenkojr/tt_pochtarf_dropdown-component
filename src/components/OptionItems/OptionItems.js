@@ -40,7 +40,7 @@ class OptionItems extends Component {
       return (
          <div className={styles.optionsAreaWrapper}>
 					 {searchItems.map(item => {
-					 		return (
+					 		return  (
 					 				<div
 											key={item.id}
 											onClick={() => this.props.selectOption(this.props.items, item.id)}

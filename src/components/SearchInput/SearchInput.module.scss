@@ -3,8 +3,13 @@
 	align-self: center;
 	& input {
 		border: none;
+		font-size: 15px;
+		color: rgba(172, 172, 172, 1);
 		&:hover, &:focus {
 			outline: none;
+		}
+		&:focus {
+			color: rgba(0, 0, 0, 1);
 		}
 	}
 }

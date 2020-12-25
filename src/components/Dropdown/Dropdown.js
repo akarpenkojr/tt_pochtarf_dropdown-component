@@ -103,7 +103,7 @@ class Dropdown extends Component {
 						 { !this.state.selectedOptions.length ? (
 								 <div className={styles.dropDownComponent__titleWrapper}>
 									 {/*<DropdownTitle />*/}
-									 <SearchInput searchSubString={this.searchSubString}/>
+									 <SearchInput searchSubString={this.searchSubString} selectedOptionItems={this.state.selectedOptions}/>
 								 </div>
 						 ) : (
 								 <div className={styles.dropDownComponent__content}>
