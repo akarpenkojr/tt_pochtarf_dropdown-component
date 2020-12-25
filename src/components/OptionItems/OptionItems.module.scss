@@ -6,4 +6,31 @@
 
 .optionItem {
 	border-top: 1px solid rgba(229, 229, 229, 1);
+	display: flex;
+	flex-direction: row;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-left: 11px;
+	align-content: baseline;
+	&__checkbox {
+		display: flex;
+		width: 18px;
+		height: 18px;
+		border-radius: 2px;
+		border: 1px solid rgba(172, 172, 172, 1);
+	}
+	&__data {
+		padding-top: 2px;
+		padding-left: 11px;
+		line-height: 18px;
+	}
+	&__title {
+		font-weight: 600;
+		display: inline;
+	}
+	&__text {
+		margin-left: 5px;
+		color: #495C64;
+		display: inline;
+	}
 }

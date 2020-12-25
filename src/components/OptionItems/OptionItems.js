@@ -26,7 +26,17 @@ class OptionItems extends Component {
 											onClick={() => this.props.selectOption(this.props.items, item.id)}
 									>
 										<div className={styles.optionItem}>
-											{ item.title }
+											<div className={styles.optionItem__checkbox}>
+
+											</div>
+											<div className={styles.optionItem__data}>
+												<div className={styles.optionItem__title}>
+													{ item.title }
+												</div>
+												<div className={styles.optionItem__text}>
+													{ item.text }
+												</div>
+											</div>
 										</div>
 									</div>
 							)
