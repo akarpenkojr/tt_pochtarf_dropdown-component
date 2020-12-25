@@ -7,7 +7,7 @@ import styles from './DeselectAllOptions.module.scss'
 
 // import styles
 
-class DeselectAllOptions extends Component {
+class DeselectOptions extends Component {
    render() {
       return (
          <div className={styles.deselectIcon}>
@@ -17,5 +17,5 @@ class DeselectAllOptions extends Component {
    }
 }
 
-export default DeselectAllOptions
+export default DeselectOptions
 
