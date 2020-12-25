@@ -36,9 +36,10 @@ class OptionItems extends Component {
 		}) : null;
 	};
    render() {
+   		const searchItems = this.state.items.filter(item => item.title.includes(this.props.subString.toUpperCase()) || item.text.toLowerCase().includes(this.props.subString.toLowerCase()));
       return (
          <div className={styles.optionsAreaWrapper}>
-					 {this.state.items.map(item => {
+					 {searchItems.map(item => {
 					 		return (
 					 				<div
 											key={item.id}

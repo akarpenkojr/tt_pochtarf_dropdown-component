@@ -32,7 +32,7 @@ class Dropdown extends Component {
 	}
 
 	searchSubString(event) {
-		this.setState({value: event.target.value});
+		this.setState({subString: event.target.value});
 	}
 
 	selectOption = (arr, id) => {
@@ -132,6 +132,7 @@ class Dropdown extends Component {
 					 <OptionItems selectOption={this.selectOption}
 												selectedOptionItems={this.state.selectedOptions}
 												items={this.props.menuItems}
+												subString={this.state.subString}
 					 />
          </div>
       )
