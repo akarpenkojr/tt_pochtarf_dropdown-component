@@ -11,6 +11,7 @@ import DropdownTitle from "../DropdownTitle";
 import OpenSelectionMenu from "../OpenSelectionMenu";
 import OptionItems from "../OptionItems";
 import SelectedOptionItems from "../SelectedOptionItems";
+import SearchInput from "../SearchInput";
 
 // import styles
 import styles from './Dropdown.module.scss'
@@ -95,7 +96,8 @@ class Dropdown extends Component {
 					 <div className={styles.dropDownComponent__headerWrapper}>
 						 { !this.state.selectedOptions.length ? (
 								 <div className={styles.dropDownComponent__titleWrapper}>
-									 <DropdownTitle />
+									 {/*<DropdownTitle />*/}
+									 <SearchInput />
 								 </div>
 						 ) : (
 								 <div className={styles.dropDownComponent__content}>

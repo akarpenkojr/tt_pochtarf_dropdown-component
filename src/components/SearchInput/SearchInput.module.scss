@@ -1,0 +1,10 @@
+.inputWrapper {
+	display: flex;
+	align-self: center;
+	& input {
+		border: none;
+		&:hover, &:focus {
+			outline: none;
+		}
+	}
+}
