@@ -11,14 +11,13 @@ class SearchInput extends Component {
 constructor(props) {
 		super(props);
 		this.state = {
-
 		};
 	}
 
    render() {
       return (
          <div className={styles.inputWrapper}>
-					 <input type="text"/>
+					 <input type="text" onChange={(e) => this.props.searchSubString(e)} />
          </div>
       )
    }

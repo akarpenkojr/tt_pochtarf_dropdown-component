@@ -21,12 +21,18 @@ class Dropdown extends Component {
 		super(props);
 		this.state = {
 			selectedOptions: [],
-			isMenuOpen: false
+			isMenuOpen: false,
+			subString: ''
 		};
 
 		this.switchMenu = this.switchMenu.bind(this);
 		this.selectOption = this.selectOption.bind(this);
 		this.deselectOptionItem = this.deselectOptionItem.bind(this);
+		this.searchSubString = this.searchSubString.bind(this);
+	}
+
+	searchSubString(event) {
+		this.setState({value: event.target.value});
 	}
 
 	selectOption = (arr, id) => {
@@ -97,7 +103,7 @@ class Dropdown extends Component {
 						 { !this.state.selectedOptions.length ? (
 								 <div className={styles.dropDownComponent__titleWrapper}>
 									 {/*<DropdownTitle />*/}
-									 <SearchInput />
+									 <SearchInput searchSubString={this.searchSubString}/>
 								 </div>
 						 ) : (
 								 <div className={styles.dropDownComponent__content}>
