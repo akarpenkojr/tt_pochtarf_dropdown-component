@@ -119,7 +119,7 @@ class Dropdown extends Component {
 						 }
 						 <OpenSelectionMenu switchMenu={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
 					 </div>
-					 <OptionItems selectOption={this.selectOption} items={this.props.menuItems}/>
+					 <OptionItems selectOption={this.selectOption} selectedOptionItems={this.state.selectedOptions} items={this.props.menuItems}/>
          </div>
       )
    }

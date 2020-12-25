@@ -16,7 +16,6 @@ constructor(props) {
 	}
 
    render() {
-	console.log('___---_-_!!!_-_---___', this.props.selected);
       return (
          <div className={styles.selectedOptionItem} onClick={() => this.props.deselectOptionItem(this.props.selected.id)}>
 					 {this.props.selected.title}

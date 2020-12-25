@@ -17,9 +17,9 @@ class OpenSelectionMenu extends Component {
 
    render() {
 			const rotateComponent = this.props.isMenuOpen ? {
-				transform: 'rotate(0deg)'
-			} : {
 				transform: 'rotate(180deg)'
+			} : {
+				transform: 'rotate(0deg)'
 			};
       return (
          <div className={styles.openMenuIcon} style={rotateComponent} onClick={this.props.switchMenu}>

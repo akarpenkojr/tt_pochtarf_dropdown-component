@@ -3,8 +3,6 @@
 	height: 40px;
 	border-radius: 3px;
 	border: 1px solid rgba(204, 206, 217, 1);
-	padding-right: 11px;
-	padding-left: 11px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -15,11 +13,12 @@
 		border-color: rgba(0, 85, 166, 1);
 	}
 	&__headerWrapper {
-		width: 100%;
 		height: 40px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		padding-left: 12px;
+		padding-right: 12px;
 	}
 	&__content {
 		width: 100%;
