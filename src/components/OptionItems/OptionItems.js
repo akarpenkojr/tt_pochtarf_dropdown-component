@@ -16,7 +16,6 @@ class OptionItems extends Component {
 	}
 
    render() {
-		console.log('___---_-_!!!_-_---___', this.props);
       return (
          <div className={styles.optionsAreaWrapper} >
 					 {this.state.items.map(item => {

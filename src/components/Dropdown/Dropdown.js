@@ -25,13 +25,25 @@ class Dropdown extends Component {
 
 		this.switchMenu = this.switchMenu.bind(this);
 		this.selectOption = this.selectOption.bind(this);
+		this.deselectOptionItem = this.deselectOptionItem.bind(this);
 	}
 
-	selectOption = (object, id) => {
-		let selected = [...this.state.selectedOptions];
-		selected.push(object.filter(item => {
+	selectOption = (arr, id) => {
+		let selected = this.state.selectedOptions.slice();
+		selected.push(arr.filter(item => {
 			return item.id === id;
 		}));
+		this.setState({
+			selectedOptions: selected
+		});
+	};
+
+	deselectOptionItem = (id) => {
+		let selected = this.state.selectedOptions.slice(0);
+		let deselectedOptionItemIndex = selected.map(item => {
+			return item[0].id;
+		}).indexOf(id);
+		selected.splice(deselectedOptionItemIndex,1);
 		this.setState({
 			selectedOptions: selected
 		});
@@ -58,6 +70,11 @@ class Dropdown extends Component {
 			 dropDownComponent = styles.dropDownComponent + ' ' + styles.dropDownComponentActive;
 		 }
 
+		 const visibleOptionItems = this.state.selectedOptions.length > 4
+				 ? [...this.state.selectedOptions].slice(0, 4)
+				 : [...this.state.selectedOptions]
+		 ;
+
       return (
          <div className={dropDownComponent} style={openComponent}>
 					 <div className={styles.dropDownComponent__headerWrapper}>
@@ -68,7 +85,18 @@ class Dropdown extends Component {
 						 ) : (
 								 <div className={styles.dropDownComponent__content}>
 									 <div className={styles.dropDownComponent__selectedOptionItemsWrapper}>
-										 <SelectedOptionItems />
+										 {visibleOptionItems.map(item => {
+											 return (
+													 <SelectedOptionItems
+															 deselectOptionItem={this.deselectOptionItem}
+															 selected={item[0]}
+															 key={item[0].id}
+													 />
+											 )
+										 })}
+										 {this.state.selectedOptions.length > 4 ? (
+										 		<div className={styles.dropDownComponent__extraItems}>...</div>
+										 ) : null}
 									 </div>
 									 <div className={styles.dropDownComponent__deselectIconWrapper}>
 										 <DeselectAllOptions />

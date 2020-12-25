@@ -29,6 +29,14 @@
 	}
 	&__selectedOptionItemsWrapper {
 		align-self: center;
+		display: flex;
+		flex-direction: row;
+	}
+	&__extraItems {
+		height: 24px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	&__deselectIconWrapper {
 		justify-self: flex-end;

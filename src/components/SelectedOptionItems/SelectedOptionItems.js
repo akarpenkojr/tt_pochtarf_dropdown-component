@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 
 // import components
-
+import styles from './SelectedOptionItems.module.scss'
 
 // import styles
 
@@ -16,9 +16,10 @@ constructor(props) {
 	}
 
    render() {
+	console.log('___---_-_!!!_-_---___', this.props.selected);
       return (
-         <div>
-
+         <div className={styles.selectedOptionItem} onClick={() => this.props.deselectOptionItem(this.props.selected.id)}>
+					 {this.props.selected.title}
          </div>
       )
    }
