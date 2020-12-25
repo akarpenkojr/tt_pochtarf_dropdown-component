@@ -12,7 +12,11 @@
 	padding-bottom: 11px;
 	padding-left: 11px;
 	align-content: baseline;
+	transition: background-color ease-in-out .13s;
 	&__checkbox {
+		background-repeat: no-repeat;
+		background-position: center;
+		transition: ease-in-out .13s;
 		display: flex;
 		width: 18px;
 		height: 18px;
