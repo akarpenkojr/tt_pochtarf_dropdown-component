@@ -44,6 +44,13 @@ class Dropdown extends Component {
 		}
 	};
 
+	clearSelectedOptionItemList = () => {
+		let selected = this.state.selectedOptions.slice(0, 0);
+		this.setState({
+			selectedOptions: selected
+		});
+	};
+
 	deselectOptionItem = (id) => {
 		let selected = this.state.selectedOptions.slice(0);
 		let deselectedOptionItemIndex = selected.map(item => {
@@ -104,7 +111,7 @@ class Dropdown extends Component {
 										 		<div className={styles.dropDownComponent__extraItems}>...</div>
 										 ) : null}
 									 </div>
-									 <div className={styles.dropDownComponent__deselectIconWrapper}>
+									 <div className={styles.dropDownComponent__deselectIconWrapper} onClick={this.clearSelectedOptionItemList}>
 										 <DeselectAllOptions />
 									 </div>
 								 </div>
