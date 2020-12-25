@@ -6,7 +6,7 @@
 import React, {Component} from 'react'
 
 // import components
-import DeselectAllOptions from "../DeselectAllOptions";
+import DeselectOptions from "../DeselectOptions";
 import DropdownTitle from "../DropdownTitle";
 import OpenSelectionMenu from "../OpenSelectionMenu";
 import OptionItems from "../OptionItems";
@@ -114,7 +114,7 @@ class Dropdown extends Component {
 										 ) : null}
 									 </div>
 									 <div className={styles.dropDownComponent__deselectIconWrapper} onClick={this.clearSelectedOptionItemList}>
-										 <DeselectAllOptions />
+										 <DeselectOptions />
 									 </div>
 								 </div>
 						 )
