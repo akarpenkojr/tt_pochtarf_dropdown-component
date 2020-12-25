@@ -29,13 +29,19 @@ class Dropdown extends Component {
 	}
 
 	selectOption = (arr, id) => {
-		let selected = this.state.selectedOptions.slice();
-		selected.push(arr.filter(item => {
-			return item.id === id;
-		}));
-		this.setState({
-			selectedOptions: selected
-		});
+		let selected = this.state.selectedOptions.slice(0);
+		let duplicatedItemIndex = selected.map(item => {
+			return item[0].id;
+		}).indexOf(id);
+
+		if (duplicatedItemIndex === -1) {
+			selected.push(arr.filter(item => {
+				return item.id === id;
+			}));
+			this.setState({
+				selectedOptions: selected
+			});
+		}
 	};
 
 	deselectOptionItem = (id) => {
