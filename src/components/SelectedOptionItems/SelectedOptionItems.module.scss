@@ -1,12 +1,21 @@
 .selectedOptionItem {
-	width: 41px;
+	box-sizing: border-box;
+	width: 100%;
 	height: 24px;
 	border-radius: 2px;
 	background-color: rgba(229, 229, 229, 1);
 	margin-right: 4px;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-right: 5px;
 	padding-left: 4px;
+	&__title {
+		align-self: center;
+		padding-right: 5px;
+	}
+	&__deselectIcon {
+		align-self: center;
+	}
 }
 

@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 
 // import components
 import styles from './SelectedOptionItems.module.scss'
+import DeselectOptions from "../DeselectOptions";
 
 
 // import styles
@@ -19,7 +20,12 @@ constructor(props) {
    render() {
       return (
          <div className={styles.selectedOptionItem} onClick={() => this.props.deselectOptionItem(this.props.selected.id)}>
-					 {this.props.selected.title}
+					 <div className={styles.selectedOptionItem__title}>
+						 {this.props.selected.title}
+					 </div>
+					 <div className={styles.selectedOptionItem__deselectIcon}>
+						 <DeselectOptions />
+					 </div>
          </div>
       )
    }
