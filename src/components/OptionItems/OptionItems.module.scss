@@ -28,6 +28,11 @@
 		padding-left: 11px;
 		line-height: 18px;
 	}
+	&__nodata {
+		padding-top: 2px;
+		line-height: 18px;
+		color: rgba(73, 92, 100, 1);
+	}
 	&__title {
 		font-weight: 600;
 		display: inline;

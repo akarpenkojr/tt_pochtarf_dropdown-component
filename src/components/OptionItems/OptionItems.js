@@ -11,7 +11,8 @@ class OptionItems extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			items: props.items
+			items: props.items,
+			nothingFoundTitle: 'Не найдено'
 		};
 
 	}
@@ -64,6 +65,17 @@ class OptionItems extends Component {
 									</div>
 							)
 					 })}
+					 {!searchItems.length ? (
+							<div>
+								<div
+										className={styles.optionItem}
+								>
+									<div className={styles.optionItem__nodata}>
+										{this.state.nothingFoundTitle}
+									</div>
+								</div>
+							</div>
+					 ) : null}
          </div>
       )
    }
