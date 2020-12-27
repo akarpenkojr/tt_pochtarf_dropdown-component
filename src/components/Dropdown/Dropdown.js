@@ -7,7 +7,7 @@ import React, {Component} from 'react'
 
 // import components
 import DeselectOptions from "../DeselectOptions";
-import DropdownTitle from "../DropdownTitle";
+// import DropdownTitle from "../DropdownTitle";
 import OpenSelectionMenu from "../OpenSelectionMenu";
 import OptionItems from "../OptionItems";
 import SelectedOptionItems from "../SelectedOptionItems";
@@ -100,33 +100,29 @@ class Dropdown extends Component {
       return (
          <div className={dropDownComponent} style={openComponent}>
 					 <div className={styles.dropDownComponent__headerWrapper}>
-						 { !this.state.selectedOptions.length ? (
-								 <div className={styles.dropDownComponent__titleWrapper}>
-									 {/*<DropdownTitle />*/}
-									 <SearchInput searchSubString={this.searchSubString} selectedOptionItems={this.state.selectedOptions}/>
+						 <div className={styles.dropDownComponent__content}>
+							 <div className={styles.dropDownComponent__selectedOptionItemsWrapper}>
+								 {visibleOptionItems.map(item => {
+									 return (
+											 <SelectedOptionItems
+													 deselectOptionItem={this.deselectOptionItem}
+													 selected={item[0]}
+													 key={item[0].id}
+											 />
+									 )
+								 })}
+								 {this.state.selectedOptions.length > 4 ? (
+										 <div className={styles.dropDownComponent__extraItems}>...</div>
+								 ) : null}
+								 <SearchInput searchSubString={this.searchSubString} selectedOptionItems={this.state.selectedOptions} />
+							 </div>
+						 { this.state.selectedOptions.length ? (
+								 <div className={styles.dropDownComponent__deselectIconWrapper} onClick={this.clearSelectedOptionItemList}>
+									 <DeselectOptions />
 								 </div>
-						 ) : (
-								 <div className={styles.dropDownComponent__content}>
-									 <div className={styles.dropDownComponent__selectedOptionItemsWrapper}>
-										 {visibleOptionItems.map(item => {
-											 return (
-													 <SelectedOptionItems
-															 deselectOptionItem={this.deselectOptionItem}
-															 selected={item[0]}
-															 key={item[0].id}
-													 />
-											 )
-										 })}
-										 {this.state.selectedOptions.length > 4 ? (
-										 		<div className={styles.dropDownComponent__extraItems}>...</div>
-										 ) : null}
-									 </div>
-									 <div className={styles.dropDownComponent__deselectIconWrapper} onClick={this.clearSelectedOptionItemList}>
-										 <DeselectOptions />
-									 </div>
-								 </div>
-						 )
+						 ) : null
 						 }
+						 </div>
 						 <OpenSelectionMenu switchMenu={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
 					 </div>
 					 <OptionItems selectOption={this.selectOption}

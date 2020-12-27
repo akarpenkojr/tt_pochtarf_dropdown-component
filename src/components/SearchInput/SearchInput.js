@@ -18,6 +18,8 @@ constructor(props) {
 		this.input = React.createRef();
 
 		this.cleanInput = this.cleanInput.bind(this);
+		this.onFocusInputValue = this.onFocusInputValue.bind(this);
+		this.onBlurInputValue = this.onBlurInputValue.bind(this);
 	}
 
 	searchSubString(event) {
@@ -28,7 +30,17 @@ constructor(props) {
 		this.input.current.value = this.input.current.value === 'Все подклассы' ? '' : this.input.current.value;
 	}
 
-   render() {
+	onFocusInputValue() {
+		this.input.current.value = this.input.current.value === 'Все подклассы' ? '' : this.input.current.value;
+	};
+
+	onBlurInputValue() {
+		this.input.current.value = this.input.current.value
+				? this.input.current.value
+				: this.props.selectedOptionItems.length ? '' : 'Все подклассы'
+	};
+
+	render() {
       return (
          <div className={styles.inputWrapper}>
 					 <input
@@ -38,11 +50,9 @@ constructor(props) {
 							 	this.searchSubString(e);
 							 	this.props.searchSubString(e);
 							 }}
-							 onBlur={()=>{
-							 	console.log('___---_-_!!!_-_---___', this.props.searchSubString);
-								 this.input.current.value = !this.state.subString && !this.props.selectedOptionItems.length ? 'Все подклассы' : this.input.current.value
-							 }}
-							 onFocus={this.cleanInput} defaultValue={ this.state.value }/>
+							 onFocus={this.onFocusInputValue}
+							 onBlur={this.onBlurInputValue}
+							 defaultValue={this.state.value}/>
          </div>
       )
    }
