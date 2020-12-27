@@ -41,6 +41,7 @@ constructor(props) {
 	};
 
 	render() {
+		const inputSize = this.props.selectedOptionItems.length < 5 ? 22 - this.props.selectedOptionItems.length * 5 : 2;
       return (
          <div className={styles.inputWrapper}>
 					 <input
@@ -52,7 +53,8 @@ constructor(props) {
 							 }}
 							 onFocus={this.onFocusInputValue}
 							 onBlur={this.onBlurInputValue}
-							 defaultValue={this.state.value}/>
+							 defaultValue={this.state.value}
+							 size={inputSize}/>
          </div>
       )
    }

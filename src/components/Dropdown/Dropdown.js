@@ -81,7 +81,6 @@ class Dropdown extends Component {
 		 const openComponent = this.state.isMenuOpen ? {
 			 maxHeight: '205px',
 			 height: '100%',
-
 		 } : {
 			 maxHeight: '40px',
 			 height: '100%'
