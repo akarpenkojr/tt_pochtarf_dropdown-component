@@ -122,7 +122,7 @@ class Dropdown extends Component {
 						 ) : null
 						 }
 						 </div>
-						 <OpenSelectionMenu switchMenu={this.switchMenu} isMenuOpen={this.state.isMenuOpen}/>
+						 <OpenSelectionMenu switchMenu={this.switchMenu} isMenuOpen={this.state.isMenuOpen} />
 					 </div>
 					 <OptionItems selectOption={this.selectOption}
 												selectedOptionItems={this.state.selectedOptions}
